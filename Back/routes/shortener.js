@@ -1,9 +1,15 @@
 const express=require('express');
 const router=express.Router();
 
-router.get('/',(req,res,next)=>{
+
+router.post('/',(req,res,next)=>{
     console.log('in route');
-    res.setHeader('html');
-    res.render('hi');
+    console.log(req.body.argurl);
+    res.json({msg:'done cors'});
+});
+
+router.get('/',(req,res,next)=>{
+    console.log('getting');
+    res.send('hi');
 });
 module.exports=router;

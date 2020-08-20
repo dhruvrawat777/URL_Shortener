@@ -3,6 +3,12 @@ const app=express();
 const cors=require('cors');
 const bodyparser=require('body-parser');
 const shortrouter=require('./routes/shortener.js');
+
+const db=require('./database/db');
+
+
+
+
 app.use(cors());
 //app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());

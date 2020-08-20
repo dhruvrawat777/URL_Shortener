@@ -8,4 +8,8 @@ module.exports=class db_functions{
        return db.execute('SELECT * FROM url');   
     };
 
+    static insert(){
+        return db.execute('INSERT ');
+    }
+
 };

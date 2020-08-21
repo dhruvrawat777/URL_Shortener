@@ -5,7 +5,7 @@ import axios from 'axios';
 const App=()=> {
 
   const [url,newurl]=useState('');
-
+  const [shorturl,newshorturl]=useState('');
   const handler=()=>{
     console.log('hi');
     /* const post={
@@ -20,7 +20,7 @@ const App=()=> {
      argurl:url
     })
     .then(response=>{
-      console.log(JSON.stringify(response.data.msg));
+      newshorturl(JSON.stringify(response.data.shorturl));
     }).catch(error=>{
       console.log('ni hora');
       console.log(error.message)});
@@ -37,8 +37,9 @@ const App=()=> {
        
           <input type="text" onChange={valuehandler}></input>
           <button type="submit" onClick={handler}>Submit</button>
-   
-       <h1>dhruc</h1>
+
+          <h1>dhruc</h1>
+          <h2>{shorturl}</h2>
     </div>
   );
 }

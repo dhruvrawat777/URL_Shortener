@@ -1,6 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const db_functions=require('../database/db_functions');
+
 const { generateshort } = require('../database/db_functions');
 
 /* router.post('/',(req,res,next)=>{
@@ -16,7 +17,9 @@ const { generateshort } = require('../database/db_functions');
     
 }); */
 
-router.post('/',(req,res,next)=>{
+
+
+router.post('/shorten',(req,res,next)=>{
     const shorturl=generateshort();
     console.log("inside middleware");
     db_functions.insert(shorturl,req.body.argurl)
@@ -28,8 +31,4 @@ router.post('/',(req,res,next)=>{
         })
 });
 
-router.get('/',(req,res,next)=>{
-    console.log('getting');
-    res.send('hi');
-});
 module.exports=router;

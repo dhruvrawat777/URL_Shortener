@@ -24,7 +24,9 @@ router.post('/shorten',(req,res,next)=>{
     console.log("inside middleware");
     db_functions.insert(shorturl,req.body.argurl)
         .then(()=>{
-            res.json({shorturl:shorturl});
+
+            let sender="http://dhruvurl.ly/"+shorturl;
+            res.json({shorturl:sender});
         })
         .catch((error)=>{
             console.log(error);

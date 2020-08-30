@@ -12,11 +12,8 @@ const App=()=> {
       argurl:url
     };
     console.log(post); */
-    axios.post('http://localhost:5000/shorten',
-    {headers: {
-      'content-type': 'application/json',
-      'Authorization': 'Client-ID [my-client-id]'
-    },
+    axios.post('http://localhost:5000/putter/shorten',
+    {
      argurl:url
     })
     .then(response=>{

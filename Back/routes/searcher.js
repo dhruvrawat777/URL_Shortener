@@ -10,12 +10,15 @@ router.get('/*',(req,res,next)=>{
     let keypath=req.originalUrl.substring(3);
    console.log(keypath);
    db_functions.find(keypath)
-        .then(()=>{
+        .then((val)=>{
             console.log("found");
-            res.send('hi');
+            console.log(val.longg);
+            var x=(val[0][0].longg);
+            res.redirect(x);
         })
         .catch((error)=>{
             console.log("Nein");
+            console.log(error);
             res.send("Not found");
         })
        ;

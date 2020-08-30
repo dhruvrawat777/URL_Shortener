@@ -20,7 +20,7 @@ module.exports=class db_functions{
     static find(shortt){
         console.log("inside finder");
         return db.execute(
-            'SELECT longg FROM url where short=VALUES(?)',
+            'SELECT longg FROM url where short=?',
             [shortt]
         );
     }
